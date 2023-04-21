@@ -69,11 +69,13 @@ python create_vct_data.py
 ```bash
 cd ./model/vrm
 sh ./scripts/train.sh # train
-sh ./scripts/test.sh  # train
+sh ./scripts/test.sh  # test
 ```
+Please download the pretrain model [here](https://drive.google.com/drive/folders/19CcSZ-7Hvf0VwiWOes1xr8j499w4TToM?usp=sharing) for test, and put it in `\model\vrm\ckpts\`.
+
 This part is modified from [X-CLIP](https://github.com/xuguohai/X-CLIP).
 
-2. Vehicle Color and Type Modules
+1. Vehicle Color and Type Modules
 ```bash
 cd ./model/vct
 python train.py --config vehicle_color_train.yaml  # vehicle color module train
