@@ -66,16 +66,21 @@ python create_vct_data.py
 ```
 ### Model
 1. Video Recognition Module (baseline)
+   
+   This part is modified from [X-CLIP](https://github.com/xuguohai/X-CLIP).
+
+    Please download the pretrain model [here](https://drive.google.com/drive/folders/19CcSZ-7Hvf0VwiWOes1xr8j499w4TToM?usp=sharing) for test, and put it in `\model\vrm\ckpts\`.
+
 ```bash
 cd ./model/vrm
 sh ./scripts/train.sh # train
 sh ./scripts/test.sh  # test
 ```
-Please download the pretrain model [here](https://drive.google.com/drive/folders/19CcSZ-7Hvf0VwiWOes1xr8j499w4TToM?usp=sharing) for test, and put it in `\model\vrm\ckpts\`.
 
-This part is modified from [X-CLIP](https://github.com/xuguohai/X-CLIP).
+2. Vehicle Color and Type Modules
+  
+    This part is modified from [Tip-Adapter](https://github.com/gaopengcuhk/Tip-Adapter).
 
-1. Vehicle Color and Type Modules
 ```bash
 cd ./model/vct
 python train.py --config vehicle_color_train.yaml  # vehicle color module train
@@ -84,14 +89,16 @@ python test.py --config vehicle_color_test.yaml  #  vehicle color module test
 python train.py --config vehicle_type_train.yaml  # vehicle type module train
 python test.py --config vehicle_type_test.yaml  #  vehicle type module test
 ```
-This part is modified from [Tip-Adapter](https://github.com/gaopengcuhk/Tip-Adapter).
 
 3. Vehicle Motion Modules
 ```bash
 cd ./model/vmm
 python main.py # vehicle color module
 ```
+
 4. Vehicle Surrounding Modules
+   
+   This part is modified from [GLIP](https://github.com/microsoft/GLIP).
 ```bash
 cd ./model/vsm/branch1
 python vsm1.py # vehicle surrounding module branch 1
@@ -99,7 +106,7 @@ python vsm1.py # vehicle surrounding module branch 1
 cd ./model/vsm/branch2
 python get_candidates.py # vehicle surrounding module branch 2
 ```
-This part is modified from [GLIP](https://github.com/microsoft/GLIP).
+
 
 ### Postprocessing
 Run the following command to generate the final submit result 81.79%.
