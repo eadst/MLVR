@@ -19,6 +19,6 @@ def get_imgs(path):
 
             
 path = "./aicity23/data/train-tracks.json"
-get_imgs()
+get_imgs(path)
 path = "./aicity23/data/test-tracks.json"
-get_imgs()
+get_imgs(path)
